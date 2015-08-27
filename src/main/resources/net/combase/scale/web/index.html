@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>COMBASE KORONA.pos Client API Demo</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!-- jQuery -->
+		<script src="webbrowser:jquery.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="webbrowser:bootstrap.min.css"></link>
+		<link rel="stylesheet" href="webbrowser:bootstrap-theme.min.css"></link>
+		<script src="webbrowser:bootstrap.min.js"></script>
+
+		<!-- KORONA.pos-Client API module -->
+		<script type="text/javascript" src="webbrowser:korona-plugin-api.js"></script>
+		<link rel="stylesheet" href="webbrowser:koronaposclient.css"></link>
+
+		<style>
+			code, kbd, pre, samp {
+				font-family: monospace;
+			}
+			body {
+				font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+			}
+			.CodeMirror {
+				height: auto;
+			}
+		</style>
+
+		<!-- JavaScript for this page -->
+		<script type="text/javascript">
+		
+			window.onload = function myOnLoadFunc() {
+
+
+				korona_plugin_api.ready(function myReadyFunc() {
+					
+					var index = korona_plugin_api.request.receipt.sales.length;
+					$.ajax({
+						url: "./controller/w?rando="+Date.now()+"&index="+index,
+			            		type: "GET",
+			            		dataType: "text"
+					}).done(function(data){
+						korona_plugin_api.response.modifySale({
+							modifier: index,
+							quantity: data
+						});
+						
+						korona_plugin_api.backToKorona();
+
+					});
+					
+				});
+			};
+
+		</script>
+	</head>
+
+	<body>
+
+		<div class="container-fluid" style="text-align:center;">
+
+			<h1>Reading scale, please wait....</h1>
+
+		</div>
+	</body>
+</html>
