@@ -5,13 +5,14 @@ This application is not part of KORONA and is not certified for live use.
 ## Requirements
 - Java 1.7 or higher
 - KORONIX 1.6 or higher (currently there is no Windows or MacOSX support)
+- KORONA Point of Sale Client version 1.73 or higher
 - ScannerScale must be Datalogix Magellan 8500xt (or similar)
 - Device must be connected with a single serial cable (USB or dual cable is not supported)
-- Scanner must be setup to append a TAB after each scan code (see http://www.datalogic.com/eng/support-services/automatic-data-capture/downloads/programming-sheets-ps-109.html?search_prod=155)
+- Scanner must be setup to append a TAB after each scan code
 
 ## Setup
 #### 1) Download application file and copy it to the POS
-    Download: https://github.com/COMBASE/KORONA.pos-Client-ScannerScale/releases
+    You can fin a current application for download unter "Releases" 
     Place application file (scale-connector.jar) into /opt/koronaposj/bin/
 #### 2) Connect Device
     The device has to be connected with a single servial cable to COM1.
@@ -29,4 +30,14 @@ This application is not part of KORONA and is not certified for live use.
     Then go to the Button Configuration and create a new button for the external system call.  This button will be used to get the weigth from the scale and assign it as item quantity.
     
 #### 6) Retrieve master data and reboot the POS
+
+## Useful Links
+#### Get KORONA Point of Sale
+http://www.koronapos.com
+#### Access KORONA Cloud Backoffice
+https://www.koronacloud.com
+#### Get Programming Sheets for Datalogic Magellan 8500xt
+http://www.datalogic.com/eng/support-services/automatic-data-capture/downloads/programming-sheets-ps-109.html?search_prod=155
+
+
 
