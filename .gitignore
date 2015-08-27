@@ -8,5 +8,5 @@ org.eclipse.wst.jsdt.core.javascriptValidator.launch
 .iml
 .idea/
 *.iml
-dependency-reduced-pom.xml
+#dependency-reduced-pom.xml
 
