@@ -45,7 +45,7 @@
 					}).done(function(data){
 						korona_plugin_api.response.modifySale({
 							modifier: index,
-							quantity: data
+							quantity: data/100
 						});
 						
 						korona_plugin_api.backToKorona();
