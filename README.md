@@ -19,7 +19,7 @@ This application is not part of KORONA and is not certified for live use.
 #### 3) Add application to autostart
     Edit the file /opt/koronaposj/scripts/before_koronaposj and add the following two lines:
     
-      stty –file=/dev/ttyS0 raw
+      stty -file=/dev/ttyS0 raw
       java -jar /opt/koronaposj/bin/scale-connector.jar &
     
 #### 5) Setup external system call
