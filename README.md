@@ -6,7 +6,9 @@ This application is not part of KORONA and is not certified for live use.
 - Java 1.7 or higher
 - KORONIX 1.6 or higher (currently there is no Windows or MacOSX support)
 - KORONA Point of Sale Client version 1.73 or higher
-- ScannerScale must be Datalogix Magellan 8500xt (or similar)
+- ScannerScale must be Datalogix Magellan 
+    -8500 works with this setup
+    -8200 & 9500 works by adding a - in front of raw in step 3
 - Device must be connected with a single serial cable (USB or dual cable is not supported)
 - Scanner must be setup to append a TAB after each scan code
 
@@ -17,10 +19,15 @@ This application is not part of KORONA and is not certified for live use.
 #### 2) Connect Device
     The device has to be connected with a single servial cable to COM1.
 #### 3) Add application to autostart
-    Edit the file /opt/koronaposj/scripts/before_koronaposj and add the following two lines:
+    Edit the file /opt/koronaposj/scripts/before_koronaposj and add the following two lines (for 8500):
     
       stty -file=/dev/ttyS0 raw
       java -jar /opt/koronaposj/bin/scale-connector.jar &
+      
+    Edit the file /opt/koronaposj/scripts/before_koronaposj and add the following two lines (for 8200 & 9500): 
+    
+      stty -file=/dev/ttyS0 -raw
+      java -jar /opt/koronaposj/bin/scale-connector.jar &  
     
 #### 5) Setup external system call
     Log into www.koronacloud.com and go to Settings > External System Calls.  Create a new external system call with the name "Get Weight" and use the following Display URL:
