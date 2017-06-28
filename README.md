@@ -27,7 +27,6 @@ This application is not part of KORONA and is not certified for live use.
       stty -file=/dev/ttyS0 -raw
       java -jar /opt/koronaposj/bin/scale-connector.jar & 
     
-    Note: The only difference is the - in front of raw
     
 #### 5) Setup external system call
     Log into www.koronacloud.com and go to Settings > External System Calls.  Create a new external system call with the name "Get Weight" and use the following Display URL:
